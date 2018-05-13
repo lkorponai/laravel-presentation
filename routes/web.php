@@ -22,3 +22,8 @@ Route::get('/hello/{name?}', function($name = 'Guest'){
 Route::post('/post', function(){
     return 'Hello world!';
 });
+
+Route::get('/goodbye-world', 'DummyController@goodbyeWorld');
+Route::get('/goodbye/{name?}', 'DummyController@sayGoodbye');
+Route::get('/redirect', 'DummyController@redirectToGoodbyeWorld');
+Route::get('/redirect/target/{name?}', 'DummyController@redirectTarget')->name('target');
