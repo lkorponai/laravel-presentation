@@ -39,3 +39,8 @@ Route::get('/raw/select', 'RawSqlController@selectUsers');
 Route::get('/raw/insert', 'RawSqlController@insertUser');
 Route::get('/raw/update', 'RawSqlController@updateUsers');
 Route::get('/raw/delete', 'RawSqlController@deleteUsers');
+
+Route::get('/qb/select', 'QueryBuilderController@selectUsers');
+Route::get('/qb/insert', 'QueryBuilderController@insertUser');
+Route::get('/qb/update', 'QueryBuilderController@updateUsers');
+Route::get('/qb/delete', 'QueryBuilderController@deleteUsers');
