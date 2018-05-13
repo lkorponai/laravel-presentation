@@ -34,3 +34,8 @@ Route::get('/redirect/target/{name?}', 'DummyController@redirectTarget')->name('
 
 Route::get('/view/greet/{name?}', 'ViewController@greet');
 Route::get('/view/layout', 'ViewController@layout');
+
+Route::get('/raw/select', 'RawSqlController@selectUsers');
+Route::get('/raw/insert', 'RawSqlController@insertUser');
+Route::get('/raw/update', 'RawSqlController@updateUsers');
+Route::get('/raw/delete', 'RawSqlController@deleteUsers');
