@@ -1,0 +1,29 @@
+# RUN WITH: docker-compose -f docker-compose.yml -p laravel up -d
+version: '3.5'
+
+services:
+    workshop:
+        build:
+           context: ./build/workshop
+        container_name: laravel
+        ports:
+         - 3000:80
+        environment:
+         - APACHE_RUN_USER=www-data
+         - APACHE_RUN_GROUP=www-data
+         - APACHE_DOCUMENT_ROOT=/data/workshop/public
+         - APACHE_USE_STANDARD_PORT=0
+         - XDEBUG_REMOTE_HOST=10.36.7.20
+        volumes:
+          - type: bind
+            source: ./
+            target: /data/workshop
+    database:
+        image: postgres:10
+        container_name: laravel-psql
+        environment:
+         - POSTGRES_DB=laravel
+         - POSTGRES_USER=laravel
+         - POSTGRES_PASSWORD=laravel
+        ports:
+         - 5432:5432
