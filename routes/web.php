@@ -31,3 +31,6 @@ Route::get('/goodbye-world', 'DummyController@goodbyeWorld');
 Route::get('/goodbye/{name?}', 'DummyController@sayGoodbye');
 Route::get('/redirect', 'DummyController@redirectToGoodbyeWorld');
 Route::get('/redirect/target/{name?}', 'DummyController@redirectTarget')->name('target');
+
+Route::get('/view/greet/{name?}', 'ViewController@greet');
+Route::get('/view/layout', 'ViewController@layout');
