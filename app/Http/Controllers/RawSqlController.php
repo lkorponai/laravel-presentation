@@ -15,7 +15,7 @@ class RawSqlController extends Controller
 
     public function insertUser()
     {
-        $count = \DB::insert(
+        $return = \DB::insert(
             'insert into users (name, bio) values (:name, :bio)',
             [
                 'name' => str_random(10),
@@ -23,7 +23,7 @@ class RawSqlController extends Controller
             ]
         );
 
-        return $this->returnResponse($count);
+        return $this->returnResponse($return);
     }
 
     public function updateUsers()
@@ -40,7 +40,7 @@ class RawSqlController extends Controller
 
     public function deleteUsers()
     {
-        $count = \DB::update('delete from users where length(bio) > 150');
+        $count = \DB::delete('delete from users where length(bio) > 150');
 
         return $this->returnResponse($count);
     }
