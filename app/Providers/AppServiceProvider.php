@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\InMemoryLogger;
 use App\Services\PlaceHolderApiService;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
             $endpoint = 'https://jsonplaceholder.typicode.com/users/1';
 
             return new PlaceHolderApiService($endpoint);
+        });
+
+        $this->app->singleton(InMemoryLogger::class, function ($app) {
+            return new InMemoryLogger();
         });
     }
 }

@@ -13,6 +13,10 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        'App\Events\PostAction' => [
+            'App\Listeners\SendPostNotification',
+            'App\Listeners\LogPostAction',
+        ],
     ];
 
     /**

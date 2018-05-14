@@ -55,3 +55,5 @@ Route::get('/service/user-api', 'ServiceController@userApiCall');
 Route::get('/service/user-api-facade', 'ServiceController@userApiFacadeCall');
 
 Route::get('/job/dispatch', 'JobController@dispatchJob');
+
+Route::get('/event/dispatch', 'EventController@dispatchEvent');
