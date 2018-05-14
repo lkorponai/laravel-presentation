@@ -44,3 +44,9 @@ Route::get('/qb/select', 'QueryBuilderController@selectUsers');
 Route::get('/qb/insert', 'QueryBuilderController@insertUser');
 Route::get('/qb/update', 'QueryBuilderController@updateUsers');
 Route::get('/qb/delete', 'QueryBuilderController@deleteUsers');
+
+Route::get('/model/select', 'ModelController@selectUsers');
+Route::get('/model/insert', 'ModelController@insertUser');
+Route::get('/model/update', 'ModelController@updateUsers');
+Route::get('/model/delete', 'ModelController@deleteUsers');
+Route::get('/model/relation', 'ModelController@relation');
