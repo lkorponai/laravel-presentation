@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\PlaceHolderApiService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(PlaceHolderApiService::class, function ($app) {
+            $endpoint = 'https://jsonplaceholder.typicode.com/users/1';
+
+            return new PlaceHolderApiService($endpoint);
+        });
     }
 }

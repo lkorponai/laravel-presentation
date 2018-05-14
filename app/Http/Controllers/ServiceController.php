@@ -10,7 +10,9 @@ class ServiceController extends Controller
 
     public function userApiCall()
     {
-        $user = PlaceHolderApiService::getUser();
+        $apiService = resolve(PlaceHolderApiService::class);
+
+        $user = $apiService->getUser();
 
         return $user->toJson();
     }
