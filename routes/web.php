@@ -52,3 +52,4 @@ Route::get('/model/delete', 'ModelController@deleteUsers');
 Route::get('/model/relation', 'ModelController@relation');
 
 Route::get('/service/user-api', 'ServiceController@userApiCall');
+Route::get('/service/user-api-facade', 'ServiceController@userApiFacadeCall');

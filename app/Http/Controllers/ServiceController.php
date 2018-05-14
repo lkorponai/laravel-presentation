@@ -17,4 +17,11 @@ class ServiceController extends Controller
         return $user->toJson();
     }
 
+    public function userApiFacadeCall()
+    {
+        $user = \PlaceholderApi::getUser();
+
+        return $user->toJson();
+    }
+
 }
