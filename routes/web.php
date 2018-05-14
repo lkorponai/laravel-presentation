@@ -50,3 +50,5 @@ Route::get('/model/insert', 'ModelController@insertUser');
 Route::get('/model/update', 'ModelController@updateUsers');
 Route::get('/model/delete', 'ModelController@deleteUsers');
 Route::get('/model/relation', 'ModelController@relation');
+
+Route::get('/service/user-api', 'ServiceController@userApiCall');
